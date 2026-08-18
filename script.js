@@ -348,6 +348,7 @@ const monthNames = [
 
 ];
 
+
 const shortMonthNames = [
 
     "JAN",
@@ -416,18 +417,15 @@ function categoryClass(category) {
     const map = {
 
         "Aulas": "aulas",
-
         "Provas": "provas",
-
         "Feriados": "feriados",
-
         "Reuniões": "reunioes",
-
         "Atividades": "atividades"
 
     };
 
     return map[category] || "aulas";
+
 }
 
 
@@ -482,13 +480,6 @@ function renderCalendar() {
         currentDate.getFullYear();
 
 
-    /*
-       Domingo = 0
-       Segunda = 1
-       ...
-       Sábado = 6
-    */
-
     const firstDay =
         new Date(
             currentDate.getFullYear(),
@@ -496,8 +487,10 @@ function renderCalendar() {
             1
         );
 
+
     const firstWeekDay =
         firstDay.getDay();
+
 
     const daysInMonth =
         new Date(
@@ -524,6 +517,7 @@ function renderCalendar() {
         let dayNumber;
 
         let monthOffset = 0;
+
 
         if (i < firstWeekDay) {
 
@@ -568,11 +562,16 @@ function renderCalendar() {
         const cell =
             document.createElement("div");
 
-        cell.className = "calendar-cell";
+        cell.className =
+            "calendar-cell";
 
 
         if (monthOffset !== 0) {
-            cell.classList.add("other-month");
+
+            cell.classList.add(
+                "other-month"
+            );
+
         }
 
 
@@ -585,7 +584,8 @@ function renderCalendar() {
         const number =
             document.createElement("div");
 
-        number.className = "day-number";
+        number.className =
+            "day-number";
 
         number.textContent =
             dayNumber;
@@ -622,6 +622,7 @@ function renderCalendar() {
 
             const eventElement =
                 document.createElement("div");
+
 
             eventElement.className =
                 "event " +
@@ -667,11 +668,6 @@ function renderCalendar() {
             eventContainer
         );
 
-
-        /*
-           Clicar em um dia abre
-           o formulário com aquela data.
-        */
 
         cell.addEventListener(
             "click",
@@ -745,6 +741,7 @@ function renderMiniCalendar() {
 
         let offset = 0;
 
+
         if (i < startDay) {
 
             day =
@@ -793,14 +790,20 @@ function renderMiniCalendar() {
 
 
         if (offset !== 0) {
+
             element.classList.add(
                 "other-month"
             );
+
         }
 
 
         if (isToday(date)) {
-            element.classList.add("today");
+
+            element.classList.add(
+                "today"
+            );
+
         }
 
 
@@ -812,9 +815,11 @@ function renderMiniCalendar() {
 
 
         if (hasEvent) {
+
             element.classList.add(
                 "has-event"
             );
+
         }
 
 
@@ -882,6 +887,7 @@ function goToToday() {
     const today =
         new Date();
 
+
     currentDate =
         new Date(
             today.getFullYear(),
@@ -889,8 +895,10 @@ function goToToday() {
             today.getDate()
         );
 
+
     selectedDate =
         new Date(today);
+
 
     renderAll();
 
@@ -907,6 +915,7 @@ function openModal() {
         "hidden"
     );
 
+
     document
         .getElementById("eventTitle")
         .focus();
@@ -919,6 +928,7 @@ function closeModal() {
     eventModal.classList.add(
         "hidden"
     );
+
 
     eventForm.reset();
 
@@ -1000,6 +1010,7 @@ function handleEventSubmit(event) {
         );
 
         return;
+
     }
 
 
@@ -1075,6 +1086,7 @@ function showEventDetails(event) {
                 item =>
                     item.id !== event.id
             );
+
 
         saveEvents();
 
@@ -1306,13 +1318,6 @@ document
                     this.dataset.view;
 
 
-                /*
-                   A versão principal é mensal.
-                   Para não gerar uma tela branca,
-                   Dia e Semana continuam exibindo
-                   o calendário de forma segura.
-                */
-
                 if (
                     currentView === "day"
                 ) {
@@ -1348,11 +1353,6 @@ document
 ========================================================= */
 
 function showViewMessage(title, date) {
-
-    /*
-       Mantém a grade funcional em vez de
-       deixar uma página vazia.
-    */
 
     renderCalendar();
 
@@ -1406,21 +1406,10 @@ document.addEventListener(
 
 function initializeApp() {
 
-    /*
-       Nunca depende de servidor.
-       Nunca depende de API.
-       Nunca depende de React.
-    */
-
     renderAll();
 
 }
 
-
-/*
-   Inicializa somente depois que o HTML
-   estiver completamente carregado.
-*/
 
 if (
     document.readyState === "loading"
@@ -1436,105 +1425,3 @@ if (
     initializeApp();
 
 }
-
-
-/* =========================================================
-   MODO NOTURNO
-========================================================= */
-
-const themeToggle = document.getElementById("themeToggle");
-
-function applyTheme(isDark) {
-    document.body.classList.toggle("dark-mode", isDark);
-
-    if (themeToggle) {
-        themeToggle.textContent = isDark ? "☀" : "☾";
-        themeToggle.title = isDark
-            ? "Ativar modo claro"
-            : "Ativar modo noturno";
-        themeToggle.setAttribute(
-            "aria-label",
-            isDark ? "Ativar modo claro" : "Ativar modo noturno"
-        );
-    }
-}
-
-const savedTheme = localStorage.getItem("horacerta_theme");
-const prefersDark = window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches;
-
-applyTheme(
-    savedTheme === "dark" ||
-    (savedTheme === null && prefersDark)
-);
-
-if (themeToggle) {
-    themeToggle.addEventListener("click", function () {
-        const isDark = !document.body.classList.contains("dark-mode");
-
-        applyTheme(isDark);
-        localStorage.setItem(
-            "horacerta_theme",
-            isDark ? "dark" : "light"
-        );
-    });
-}
-/* =========================================================
-   MODO NOTURNO
-========================================================= */
-
-const themeToggle = document.getElementById("themeToggle");
-
-function updateThemeButton() {
-    if (!themeToggle) return;
-
-    const darkMode =
-        document.body.classList.contains("dark-mode");
-
-    if (darkMode) {
-        themeToggle.textContent = "☀";
-        themeToggle.title = "Ativar modo claro";
-        themeToggle.setAttribute(
-            "aria-label",
-            "Ativar modo claro"
-        );
-    } else {
-        themeToggle.textContent = "☾";
-        themeToggle.title = "Ativar modo noturno";
-        themeToggle.setAttribute(
-            "aria-label",
-            "Ativar modo noturno"
-        );
-    }
-}
-
-if (themeToggle) {
-
-    themeToggle.addEventListener("click", function () {
-
-        document.body.classList.toggle("dark-mode");
-
-        const darkMode =
-            document.body.classList.contains("dark-mode");
-
-        localStorage.setItem(
-            "horacerta_dark_mode",
-            darkMode ? "true" : "false"
-        );
-
-        updateThemeButton();
-
-    });
-
-}
-
-/* Recupera o modo escolhido anteriormente */
-
-const savedTheme =
-    localStorage.getItem("horacerta_dark_mode");
-
-if (savedTheme === "true") {
-    document.body.classList.add("dark-mode");
-}
-
-updateThemeButton();
