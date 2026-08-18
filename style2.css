@@ -1,0 +1,206 @@
+/* =========================================================
+   MODO NOTURNO
+========================================================= */
+
+body.dark-mode {
+    --text: #f1f3f5;
+    --muted: #a8b0ba;
+
+    --border: #34383d;
+    --background: #1f2226;
+    --page: #181a1d;
+
+    background: var(--page);
+    color: var(--text);
+}
+
+body.dark-mode .app {
+    background: #1f2226;
+}
+
+body.dark-mode .sidebar {
+    background: #202328;
+    border-color: #34383d;
+}
+
+body.dark-mode .calendar-area {
+    background: #1f2226;
+}
+
+body.dark-mode .calendar-toolbar {
+    border-color: #34383d;
+}
+
+body.dark-mode .calendar-week-header {
+    background: #25282d;
+    border-color: #34383d;
+}
+
+body.dark-mode .calendar-week-header div {
+    color: #b8bec7;
+    border-color: #34383d;
+}
+
+body.dark-mode .calendar-cell {
+    background: #1f2226;
+    border-color: #34383d;
+}
+
+body.dark-mode .calendar-cell:hover {
+    background: #292d32;
+}
+
+body.dark-mode .calendar-cell.other-month {
+    background: #1b1e21;
+}
+
+body.dark-mode .calendar-cell.other-month .day-number {
+    color: #555b63;
+}
+
+body.dark-mode .day-number {
+    color: #d5d9de;
+}
+
+body.dark-mode .new-event-button {
+    background: #292d32;
+    border-color: #444950;
+    color: #f1f3f5;
+}
+
+body.dark-mode .new-event-button:hover {
+    background: #33383e;
+    border-color: #555c64;
+}
+
+body.dark-mode .mini-calendar-section {
+    border-color: #34383d;
+}
+
+body.dark-mode .mini-calendar-header {
+    color: #d5d9de;
+}
+
+body.dark-mode .mini-nav {
+    color: #aeb5bd;
+}
+
+body.dark-mode .mini-day {
+    color: #d0d5da;
+}
+
+body.dark-mode .mini-day:hover {
+    background: #30353b;
+}
+
+body.dark-mode .mini-day.other-month {
+    color: #555b63;
+}
+
+body.dark-mode .section-title {
+    color: #aeb5bd;
+}
+
+body.dark-mode .category-filter {
+    color: #d8dce1;
+}
+
+body.dark-mode .category-filter:hover {
+    background: #2c3035;
+}
+
+body.dark-mode .school-info {
+    border-color: #34383d;
+}
+
+body.dark-mode .school-info strong {
+    color: #d0d5da;
+}
+
+body.dark-mode .school-info span {
+    color: #858d97;
+}
+
+body.dark-mode .today-button,
+body.dark-mode .view-button {
+    background: #292d32;
+    border-color: #444950;
+    color: #e5e8eb;
+}
+
+body.dark-mode .today-button:hover,
+body.dark-mode .view-button:hover {
+    background: #33383e;
+}
+
+body.dark-mode .navigation-button {
+    color: #b8bec7;
+}
+
+body.dark-mode .navigation-button:hover {
+    background: #30353b;
+}
+
+body.dark-mode #currentMonth {
+    color: #f1f3f5;
+}
+
+body.dark-mode .modal {
+    background: #24272c;
+    color: #f1f3f5;
+}
+
+body.dark-mode .modal-header {
+    border-color: #3a3f45;
+}
+
+body.dark-mode .modal-header h2 {
+    color: #f1f3f5;
+}
+
+body.dark-mode .modal-close {
+    color: #b8bec7;
+}
+
+body.dark-mode .modal-close:hover {
+    background: #33383e;
+}
+
+body.dark-mode .form-group label {
+    color: #c4c9cf;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group select,
+body.dark-mode .form-group textarea {
+    background: #1b1e22;
+    border-color: #444950;
+    color: #f1f3f5;
+}
+
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
+    color: #777f89;
+}
+
+body.dark-mode .cancel-button {
+    background: #292d32;
+    border-color: #444950;
+    color: #d8dce1;
+}
+
+body.dark-mode .cancel-button:hover {
+    background: #33383e;
+}
+
+/* Botão do tema */
+
+.theme-toggle {
+    transition:
+        transform .2s ease,
+        background .2s ease;
+}
+
+.theme-toggle:hover {
+    transform: rotate(15deg);
+}
