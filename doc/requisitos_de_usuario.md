@@ -3,7 +3,9 @@
 **Padrão:** ISO/IEC/IEEE 29148:2018 | UML 2.5.1
 **Versão:** 1.0
 **Data:** 08/09/2026
+---
 **Professor:** Carlos David.
+---
 **Integrantes:** Arthur Augusto de Souza, Alexsandro Oliveira Carvalho, Gabriel Carezolin Borges, Luis Fernando Ferreira Maracaipes Campos, Misael Augusto de Oliveira Gomes e Vitor Gabriel da Costa.
 ---
 ---
