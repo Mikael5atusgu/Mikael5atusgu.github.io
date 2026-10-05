@@ -55,7 +55,12 @@ app.post('/api/solicitacoes', async (req, res) => {
   res.json({ success: true });
 });
 
+// ... [restante código do seu server.js antes do final] ...
+
+// O process.env.PORT diz ao Render para usar a porta que ele atribuir.
+// O "3000" serve apenas como fallback para testes no seu computador.
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => {
-  console.log(`Servidor rodando na porta ${PORT} - http://localhost:${PORT}`);
+
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`Servidor rodando na porta ${PORT}`);
 });
