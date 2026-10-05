@@ -3,7 +3,9 @@
 **Padrão:** FURPS+ / ISO/IEC 25010 | Node.js Runtime Architecture
 **Versão:** 1.0
 **Data:** 08/09/2026
-
+**Professor:** Carlos David.
+**Integrantes:** Arthur Augusto de Souza, Alexsandro Oliveira Carvalho, Gabriel Carezolin Borges, Luis Fernando Ferreira Maracaipes Campos, Misael Augusto de Oliveira Gomes e Vitor Gabriel da Costa.
+---
 ---
 
 ## 1. Requisitos Funcionais de Sistema (RSF)
