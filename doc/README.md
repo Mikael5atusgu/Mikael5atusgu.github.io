@@ -1,3 +1,7 @@
+**Professor:** Carlos David.
+**Integrantes:** Arthur Augusto de Souza, Alexsandro Oliveira Carvalho, Gabriel Carezolin Borges, Luis Fernando Ferreira Maracaipes Campos, Misael Augusto de Oliveira Gomes e Vitor Gabriel da Costa.
+---
+
 # HoraCerta --- Gestão Escolar e Calendário de Eventos
 
 Sistema web desenvolvido para centralizar informações escolares,
